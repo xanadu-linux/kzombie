@@ -1,4 +1,22 @@
-commit 9aaa43a2c9740c993e0488a1aaea070bef88bfd6 (HEAD, origin/master, origin/HEAD, master)
+commit 464c87fd612ddc4f8d43ad0ee6e39a4a7dc4e52f (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sun Jul 16 15:41:22 2017 -0400
+
+    * se hace el script mas pequeño
+
+commit 8aac427efa51f815bf2c18bc9b76ca6a9b495de4
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sun Jul 16 15:40:01 2017 -0400
+
+    * se agrega un contador de procesos zombie
+
+commit 1bd37c2f7ca613b4d2e74bb113d3e1cb3b5ec0b7
+Author: jose perez <sinfallas@gmail.com>
+Date:   Wed Jul 12 17:09:48 2017 -0400
+
+    * changelog
+
+commit 9aaa43a2c9740c993e0488a1aaea070bef88bfd6
 Author: jose perez <sinfallas@gmail.com>
 Date:   Wed Jul 12 17:09:35 2017 -0400
 
