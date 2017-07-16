@@ -9,9 +9,12 @@ fi
 trap "rm -f /run/$(basename $0).pid; exit" 0 1 2 3 15
 echo "$BASHPID" > /run/$(basename $0).pid
 
+contar=0
+
 for i in $(ps -A -ostat,ppid | grep -e '[zZ]' | awk '{print $2}'); do
 	echo "Enviando señal SIGCHLD al proceso zombie con el PID $i"
 	kill -s SIGCHLD $i
+	let contar=$(($contar+1))
 done
 
 for j in $(ps -A -ostat,ppid | grep -e '[zZ]' | awk '{print $2}'); do
@@ -19,6 +22,7 @@ for j in $(ps -A -ostat,ppid | grep -e '[zZ]' | awk '{print $2}'); do
 	kill -s SIGHUP $j
 done
 
+echo "Se han encontrado $contar procesos zombie"
 echo "Finalizado."
 rm -f /run/$(basename $0).pid
 exit 0
