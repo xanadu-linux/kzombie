@@ -2,12 +2,12 @@
 # Made by Sinfallas <sinfallas@yahoo.com>
 # Licence: GPL-2
 LC_ALL=C
-if [[ "$EUID" != "0" ]]; then
-	echo -e "\e[00;31mERROR: Debe ser ROOT\e[00m"
-	exit 1
-fi
+IFS=" "
 trap "rm -f /run/$(basename $0).pid; exit" 0 1 2 3 15
 echo "$BASHPID" > /run/$(basename $0).pid
+exec 2>/var/log/$(basename $0).log
+source /usr/bin/variables
+rootcli
 
 contar=0
 for i in $(ps -A -ostat,ppid | grep -e '[zZ]' | awk '{print $2}'); do
